@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EjerciciosDidacticos</string>
+    <string name="app_title">Ingreso al sistema</string>
+    <string name="hint_username">Ingrese el nombre de usuario</string>
+    <string name="hint_password">Ingrese la contraseña</string>
+    <string name="text_button">Aceptar</string>
+    <string name="text_forgot_password">¿Olvidó su contraseña?</string>
+
+</resources>
