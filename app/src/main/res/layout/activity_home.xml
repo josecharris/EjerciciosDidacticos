@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/background_view"/>
-    
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -42,14 +42,12 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-
                 <ImageView
                     android:id="@+id/idImageShowUsers"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/outline_contacts_product_24"
-                    android:layout_gravity="center"
-                    />
+                    android:layout_gravity="center"/>
                 <TextView
                     android:id="@+id/idTextShowUsers"
                     android:layout_width="wrap_content"
@@ -59,14 +57,15 @@
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/idCardCreateUser"
+            android:id="@+id/idCardCreateUsers"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="30dp"
-            app:cardElevation="12dp"
+            app:cardElevation="50dp"
             android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
@@ -79,36 +78,35 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-
                 <ImageView
-                    android:id="@+id/idImageCreateUser"
+                    android:id="@+id/idImageCreateUsers"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:layout_gravity="center"
                     android:src="@drawable/outline_contacts_product_24"
-                    />
+                    android:layout_gravity="center"/>
                 <TextView
-                    android:id="@+id/idTextCreateUser"
+                    android:id="@+id/idTextCreateUsers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crear Usuario"
+                    android:text="Ver Usuarios"
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/idCardShowObject1"
+            android:id="@+id/idCardViewObject1"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="30dp"
-            app:cardElevation="12dp"
+            app:cardElevation="50dp"
+            android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_row="1"
             android:layout_column="0"
-            android:layout_margin="12dp"
             app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
@@ -116,23 +114,22 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-
                 <ImageView
-                    android:id="@+id/idImageShowObject1"
+                    android:id="@+id/idImageViewObject1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/outline_contacts_product_24"
-                    android:layout_gravity="center"
-                    />
+                    android:layout_gravity="center"/>
                 <TextView
-                    android:id="@+id/idTextShowObject1"
+                    android:id="@+id/idTextViewObject1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ver Objeto 1"
+                    android:text="Crear Usuarios"
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -140,12 +137,12 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="30dp"
-            app:cardElevation="12dp"
+            app:cardElevation="50dp"
+            android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_row="1"
             android:layout_column="1"
-            android:layout_margin="12dp"
             app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
@@ -153,36 +150,35 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-
                 <ImageView
                     android:id="@+id/idImageCreateObject1"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/outline_contacts_product_24"
-                    android:layout_gravity="center"
-                    />
+                    android:layout_gravity="center"/>
                 <TextView
                     android:id="@+id/idTextCreateObject1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crear Objeto 1"
+                    android:text="Crear Usuarios"
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/idCardShowObject2"
+            android:id="@+id/idCardViewObject2"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="30dp"
-            app:cardElevation="12dp"
+            app:cardElevation="50dp"
+            android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_row="2"
             android:layout_column="0"
-            android:layout_margin="12dp"
             app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
@@ -190,22 +186,22 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-
                 <ImageView
-                    android:id="@+id/idImageShowObject2"
+                    android:id="@+id/idImageViewObject2"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/outline_contacts_product_24"
                     android:layout_gravity="center"/>
                 <TextView
-                    android:id="@+id/idTextShowObject2"
+                    android:id="@+id/idTextViewObject2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ver Objeto 1"
+                    android:text="Crear Usuarios"
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -213,12 +209,12 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="30dp"
-            app:cardElevation="12dp"
+            app:cardElevation="50dp"
+            android:layout_margin="12dp"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
             android:layout_row="2"
             android:layout_column="1"
-            android:layout_margin="12dp"
             app:cardBackgroundColor="@android:color/white">
 
             <LinearLayout
@@ -226,37 +222,37 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center">
-
                 <ImageView
                     android:id="@+id/idImageCreateObject2"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/outline_contacts_product_24"
-                    android:layout_gravity="center"
-                    />
+                    android:layout_gravity="center"/>
                 <TextView
                     android:id="@+id/idTextCreateObject2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crear objeto 2"
+                    android:text="Crear Usuarios"
                     android:layout_gravity="center"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
-    
+
     <TextView
         android:id="@+id/idUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dashboard"
-        android:textStyle="bold"
-        android:textSize="36sp"
         android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="35dp"/>
+
 
 
 

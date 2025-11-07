@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EjerciciosDidacticos">
         <activity
+            android:name=".showuser.ui.ShowUserActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

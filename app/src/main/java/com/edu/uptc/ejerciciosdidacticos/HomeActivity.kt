@@ -1,5 +1,6 @@
 package com.edu.uptc.ejerciciosdidacticos
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.edu.uptc.ejerciciosdidacticos.databinding.ActivityHomeBinding
+import com.edu.uptc.ejerciciosdidacticos.showuser.ui.ShowUserActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -18,8 +20,8 @@ class HomeActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(this.binding.root)
         this.binding.idCardShowUsers.setOnClickListener {
-            Toast.makeText(this, "¡Click en ver usuarios!",
-                Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ShowUserActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -66,5 +66,13 @@ class UserDatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_N
         return usersList
     }
 
+    fun deleteNoteById(nodeId: Int){
+        val db = writableDatabase
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(nodeId.toString())
+        db.delete(TABLE_NAME, whereClause, whereArgs)
+        db.close()
+    }
+
 
 }
