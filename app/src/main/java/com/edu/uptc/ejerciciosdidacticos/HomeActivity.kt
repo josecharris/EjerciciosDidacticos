@@ -23,5 +23,12 @@ class HomeActivity : AppCompatActivity() {
             val intent = Intent(this, ShowUserActivity::class.java)
             startActivity(intent)
         }
+
+        this.binding.idCardCreateUsers.setOnClickListener {
+            val intent = Intent(this, FormUserActivity::class.java).apply {
+                putExtra("action_type", "CREATE")
+            }
+            startActivity(intent)
+        }
     }
 }

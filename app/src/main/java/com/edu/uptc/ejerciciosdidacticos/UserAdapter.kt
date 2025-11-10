@@ -1,6 +1,7 @@
 package com.edu.uptc.ejerciciosdidacticos
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,16 +48,23 @@ class UserAdapter(private var users: List<UserDTO>, private var context: Context
             builder.setMessage("¿Estás seguro de que quieres eliminar este registro?")
 
             builder.setPositiveButton("Sí") { dialog, _ ->
-                db.deleteNoteById(user.id)
+                db.deleteUserById(user.id)
                 this.refreshData(db.getUsers())
-                Toast.makeText(holder.itemView.context, "Note Deleted!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(holder.itemView.context, "¡Usuario eliminado!", Toast.LENGTH_SHORT).show()
             }
 
             builder.setNegativeButton("No") { dialog, _ ->
-                // Solo cierras el cuadro de diálogo
                 dialog.dismiss()
             }
             builder.show()
+        }
+
+        holder.updateButton.setOnClickListener {
+            val intent = Intent(holder.itemView.context, FormUserActivity::class.java).apply {
+                putExtra("action_type", "UPDATE")
+                putExtra("user_id", user.id)
+            }
+            holder.itemView.context.startActivity(intent)
         }
     }
 

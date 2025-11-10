@@ -1,5 +1,6 @@
 package com.edu.uptc.ejerciciosdidacticos.login.data
 
+import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
@@ -7,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper
 class UserDatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     companion object{
         private var DATABASE_NAME = "users.db"
-        private var DATABASE_VERSION = 1
+        private var DATABASE_VERSION = 2
         private var TABLE_NAME = "user"
         private var COLUMN_ID = "id"
         private var COLUMN_USERNAME = "username"
@@ -47,7 +48,27 @@ class UserDatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_N
         return exists;
     }
 
+    fun insertUser(user: UserDTO){
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_USERNAME, user.username)
+            put(COLUMN_PASSWORD, user.password)
+        }
+        db.insert(TABLE_NAME, null, values)
+        db.close()
+    }
 
+    fun updateUser(user: UserDTO){
+        val db = writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_USERNAME, user.username)
+            put(COLUMN_PASSWORD, user.password)
+        }
+        val whereClause = "$COLUMN_ID = ?"
+        val whereArgs = arrayOf(user.id.toString())
+        db.update(TABLE_NAME, values, whereClause, whereArgs)
+        db.close()
+    }
 
     fun getUsers(): List<UserDTO>{
         val usersList = mutableListOf<UserDTO>()
@@ -66,12 +87,25 @@ class UserDatabaseHelper(context: Context): SQLiteOpenHelper(context, DATABASE_N
         return usersList
     }
 
-    fun deleteNoteById(nodeId: Int){
+    fun deleteUserById(nodeId: Int){
         val db = writableDatabase
         val whereClause = "$COLUMN_ID = ?"
         val whereArgs = arrayOf(nodeId.toString())
         db.delete(TABLE_NAME, whereClause, whereArgs)
         db.close()
+    }
+
+    fun getUserById(userId: Int): UserDTO{
+        val db = readableDatabase
+        val query = "SELECT * FROM $TABLE_NAME WHERE $COLUMN_ID = $userId"
+        val cursor = db.rawQuery(query, null)
+        cursor.moveToFirst()
+        val id = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_ID))
+        val title = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_USERNAME))
+        val content = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PASSWORD))
+        cursor.close()
+        db.close()
+        return UserDTO(id, title, content)
     }
 
 

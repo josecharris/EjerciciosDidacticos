@@ -1,9 +1,11 @@
 package com.edu.uptc.ejerciciosdidacticos.showuser.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.edu.uptc.ejerciciosdidacticos.HomeActivity
 import com.edu.uptc.ejerciciosdidacticos.R
 import com.edu.uptc.ejerciciosdidacticos.UserAdapter
 import com.edu.uptc.ejerciciosdidacticos.databinding.ActivityShowUserBinding
@@ -29,6 +31,11 @@ class ShowUserActivity : AppCompatActivity() {
 
         binding.idRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.idRecyclerView.adapter = this.adapter
+
+        binding.idButtonBack.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
